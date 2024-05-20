@@ -29,47 +29,26 @@ class HashTable:
                     return pair[1]
         return None
     
-    # def delete(self, key):
-    #     key_hash = self.hash_function(key)
-    #     # print("key_hash",key_hash)
-    #     print("self.table",self.table)
-    #     # print("self.table[key_hash]",self.table[key_hash])
-    #     if self.table[key_hash] is not None:
-    #         for pair in self.table[key_hash]:
-    #         # for i, pair in enumerate(self.table[key_hash]):
-    #             # print("pair",pair)
-    #             if pair[0] == key:
-    #                 # print(pair[0])
-    #                 # print(pair[1])
-    #                 self.table.remove(self.table[key_hash] )
-    #                 # return pair[1]
-    #                 # print(self.table[key_hash][i])
-    #                 print("self.table",self.table)
-    #                 return f"Key {key} was deleted"
-    #             # We need to delete key_hash from or not?
-    #     return None
+    #Function for delating  
+    
     def delete(self, key):
-        key_hash = self.hash_function(key)
-        print("self.table",self.table)
+        key_hash = self.hash_function(key)    
         if self.table[key_hash] is not None:
             for i, pair in enumerate(self.table[key_hash]):
                 if pair[0] == key:
                     print(self.table[key_hash][i])
-                    del self.table[key_hash][i]
-                    print("self.table",self.table)
+                    del self.table[key_hash][i]    
                     return f"Key {key} was deleted"
-        return False    
-        # return "This key doesn't exist"
+        return "This key doesn't exist"   
+        
 
 
-# Тестуємо нашу хеш-таблицю:
+
 H = HashTable(5)
 H.insert("apple", 10)
 H.insert("orange", 20)
 H.insert("banana", 30)
 
-# print(H.get("apple"))   # Виведе: 10
-# print(H.get("orange"))  # Виведе: 20
-# print(H.get("banana"))  # Виведе: 30
-
-print(H.delete("apple"))
+# print(H.get("apple"))  
+# print(H.delete("appтьle"))
+# print(H.delete("apple"))
